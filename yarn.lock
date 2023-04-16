@@ -341,6 +341,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/webrtc@npm:^0.0.34":
+  version: 0.0.34
+  resolution: "@types/webrtc@npm:0.0.34"
+  checksum: b2f66e1bbacb06e2871e139c5679f2fb4e30429787ca6a005186752db2758d3ec4227a85b94476cb3ae97eddf5e92453cde8d4f00bb3c06d337330a306166d59
+  languageName: node
+  linkType: hard
+
 "@vitejs/plugin-react-swc@npm:^3.3.0":
   version: 3.3.0
   resolution: "@vitejs/plugin-react-swc@npm:3.3.0"
@@ -911,6 +918,7 @@ __metadata:
   dependencies:
     "@types/react": ^18.0.35
     "@types/react-dom": ^18.0.11
+    "@types/webrtc": ^0.0.34
     "@vitejs/plugin-react-swc": ^3.3.0
     react: ^18.2.0
     react-dom: ^18.2.0

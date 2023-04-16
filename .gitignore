@@ -11,3 +11,4 @@
 #.pnp.*
 
 yarn-error.log
+.env.local

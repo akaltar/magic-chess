@@ -30,6 +30,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@types/react", "npm:18.0.35"],\
             ["@types/react-dom", "npm:18.0.11"],\
+            ["@types/webrtc", "npm:0.0.34"],\
             ["@vitejs/plugin-react-swc", "virtual:d3527c51a165b407c1022f00c3b06eccaf84e334231275b1dbde7a8e85f2ab45a27b935db24a0753d1d2823a677f1e67ad62045edb69890b01166b504f1f4ad8#npm:3.3.0"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:d3527c51a165b407c1022f00c3b06eccaf84e334231275b1dbde7a8e85f2ab45a27b935db24a0753d1d2823a677f1e67ad62045edb69890b01166b504f1f4ad8#npm:18.2.0"],\
@@ -435,6 +436,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-scheduler-npm-0.16.3-887bfc0086-2b0aec39c2.zip/node_modules/@types/scheduler/",\
           "packageDependencies": [\
             ["@types/scheduler", "npm:0.16.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/webrtc", [\
+        ["npm:0.0.34", {\
+          "packageLocation": "./.yarn/cache/@types-webrtc-npm-0.0.34-a33d5b937c-b2f66e1bba.zip/node_modules/@types/webrtc/",\
+          "packageDependencies": [\
+            ["@types/webrtc", "npm:0.0.34"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -1049,6 +1059,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["magic-chess", "workspace:."],\
             ["@types/react", "npm:18.0.35"],\
             ["@types/react-dom", "npm:18.0.11"],\
+            ["@types/webrtc", "npm:0.0.34"],\
             ["@vitejs/plugin-react-swc", "virtual:d3527c51a165b407c1022f00c3b06eccaf84e334231275b1dbde7a8e85f2ab45a27b935db24a0753d1d2823a677f1e67ad62045edb69890b01166b504f1f4ad8#npm:3.3.0"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:d3527c51a165b407c1022f00c3b06eccaf84e334231275b1dbde7a8e85f2ab45a27b935db24a0753d1d2823a677f1e67ad62045edb69890b01166b504f1f4ad8#npm:18.2.0"],\
