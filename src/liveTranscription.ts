@@ -13,7 +13,7 @@ const createTranscriptionWebsocket = async (apiKey: string) => {
   );
 };
 
-interface LiveTranscriptResults {
+export interface LiveTranscriptResults {
   final: string[];
   currentPartial: string;
 }
