@@ -6,7 +6,8 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      // with options: http://localhost:5173/api/bar-> http://jsonplaceholder.typicode.com/bar
+      // For quick testing work around the need of a separate server for generating
+      // assemblyai realtime tokens. (It doesn't support CORS so fails in browser)
       "/gettoken": {
         target: "https://api.assemblyai.com/v2/realtime/token",
         changeOrigin: true,
