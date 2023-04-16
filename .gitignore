@@ -12,3 +12,6 @@
 
 yarn-error.log
 .env.local
+
+# Even though PnP doesn't use node_modules, vite still has a cache there
+node_modules

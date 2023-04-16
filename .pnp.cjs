@@ -30,10 +30,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@types/react", "npm:18.0.35"],\
             ["@types/react-dom", "npm:18.0.11"],\
+            ["@types/recordrtc", "npm:5.6.11"],\
             ["@types/webrtc", "npm:0.0.34"],\
             ["@vitejs/plugin-react-swc", "virtual:d3527c51a165b407c1022f00c3b06eccaf84e334231275b1dbde7a8e85f2ab45a27b935db24a0753d1d2823a677f1e67ad62045edb69890b01166b504f1f4ad8#npm:3.3.0"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:d3527c51a165b407c1022f00c3b06eccaf84e334231275b1dbde7a8e85f2ab45a27b935db24a0753d1d2823a677f1e67ad62045edb69890b01166b504f1f4ad8#npm:18.2.0"],\
+            ["recordrtc", "npm:5.6.2"],\
             ["typescript", "patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=85af82"],\
             ["vite", "virtual:d3527c51a165b407c1022f00c3b06eccaf84e334231275b1dbde7a8e85f2ab45a27b935db24a0753d1d2823a677f1e67ad62045edb69890b01166b504f1f4ad8#npm:4.2.1"]\
           ],\
@@ -427,6 +429,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@types/react-dom", "npm:18.0.11"],\
             ["@types/react", "npm:18.0.35"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/recordrtc", [\
+        ["npm:5.6.11", {\
+          "packageLocation": "./.yarn/cache/@types-recordrtc-npm-5.6.11-73d4d3736b-f752c90e39.zip/node_modules/@types/recordrtc/",\
+          "packageDependencies": [\
+            ["@types/recordrtc", "npm:5.6.11"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -1059,10 +1070,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["magic-chess", "workspace:."],\
             ["@types/react", "npm:18.0.35"],\
             ["@types/react-dom", "npm:18.0.11"],\
+            ["@types/recordrtc", "npm:5.6.11"],\
             ["@types/webrtc", "npm:0.0.34"],\
             ["@vitejs/plugin-react-swc", "virtual:d3527c51a165b407c1022f00c3b06eccaf84e334231275b1dbde7a8e85f2ab45a27b935db24a0753d1d2823a677f1e67ad62045edb69890b01166b504f1f4ad8#npm:3.3.0"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:d3527c51a165b407c1022f00c3b06eccaf84e334231275b1dbde7a8e85f2ab45a27b935db24a0753d1d2823a677f1e67ad62045edb69890b01166b504f1f4ad8#npm:18.2.0"],\
+            ["recordrtc", "npm:5.6.2"],\
             ["typescript", "patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=85af82"],\
             ["vite", "virtual:d3527c51a165b407c1022f00c3b06eccaf84e334231275b1dbde7a8e85f2ab45a27b935db24a0753d1d2823a677f1e67ad62045edb69890b01166b504f1f4ad8#npm:4.2.1"]\
           ],\
@@ -1412,6 +1425,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["inherits", "npm:2.0.4"],\
             ["string_decoder", "npm:1.3.0"],\
             ["util-deprecate", "npm:1.0.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["recordrtc", [\
+        ["npm:5.6.2", {\
+          "packageLocation": "./.yarn/cache/recordrtc-npm-5.6.2-2f7179dbad-4be66e42fd.zip/node_modules/recordrtc/",\
+          "packageDependencies": [\
+            ["recordrtc", "npm:5.6.2"]\
           ],\
           "linkType": "HARD"\
         }]\

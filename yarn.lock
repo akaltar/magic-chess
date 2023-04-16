@@ -334,6 +334,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/recordrtc@npm:^5.6.11":
+  version: 5.6.11
+  resolution: "@types/recordrtc@npm:5.6.11"
+  checksum: f752c90e39f038d9f934d42ae30debe0843e2ab0a06bfa1e1caac2394ffa03aaf87e7d54adcae5690f2f1877e5dbe850a9023132abe3676e2043c92e90c0530f
+  languageName: node
+  linkType: hard
+
 "@types/scheduler@npm:*":
   version: 0.16.3
   resolution: "@types/scheduler@npm:0.16.3"
@@ -918,10 +925,12 @@ __metadata:
   dependencies:
     "@types/react": ^18.0.35
     "@types/react-dom": ^18.0.11
+    "@types/recordrtc": ^5.6.11
     "@types/webrtc": ^0.0.34
     "@vitejs/plugin-react-swc": ^3.3.0
     react: ^18.2.0
     react-dom: ^18.2.0
+    recordrtc: ^5.6.2
     typescript: ^5.0.4
     vite: ^4.2.1
   languageName: unknown
@@ -1224,6 +1233,13 @@ __metadata:
     string_decoder: ^1.1.1
     util-deprecate: ^1.0.1
   checksum: bdcbe6c22e846b6af075e32cf8f4751c2576238c5043169a1c221c92ee2878458a816a4ea33f4c67623c0b6827c8a400409bfb3cf0bf3381392d0b1dfb52ac8d
+  languageName: node
+  linkType: hard
+
+"recordrtc@npm:^5.6.2":
+  version: 5.6.2
+  resolution: "recordrtc@npm:5.6.2"
+  checksum: 4be66e42fd427a86e5726afcf061963a5a16d7900d535debd2754d63ee9768d6fda8b5a7592e9835ac4b98b37d4dd73490b793f82c038d45e95dcdcc27f57d2c
   languageName: node
   linkType: hard
 
