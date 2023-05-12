@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { recordPCM } from "./recordPCM";
 
 const createTranscriptionWebsocket = async (apiKey: string) => {
@@ -60,7 +60,12 @@ type AssemblyAIMessage =
   | AssemblyPartialTranscriptMessage
   | AssemblyFinalTranscriptMessage;
 
-export const useLiveTranscription = () => {
+type OnUtteranceCallback = (utterance: string) => void;
+
+export const useLiveTranscription = (onUtterance: OnUtteranceCallback) => {
+  const onUtteranceCallbackRef = useRef<OnUtteranceCallback>(onUtterance);
+  onUtteranceCallbackRef.current = onUtterance;
+
   const [isRecording, setIsRecording] = useState<boolean>(false);
   const [transcript, setTranscript] = useState<LiveTranscriptResults>({
     final: [],
@@ -86,6 +91,8 @@ export const useLiveTranscription = () => {
           currentPartial: messageData.text,
         }));
       } else if (messageData.message_type === "FinalTranscript") {
+        console.log("calling:", onUtteranceCallbackRef);
+        onUtteranceCallbackRef.current(messageData.text);
         setTranscript((lastTranscript) => ({
           final: lastTranscript.final.concat([messageData.text]),
           currentPartial: "",
