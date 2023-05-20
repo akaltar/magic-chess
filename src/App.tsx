@@ -12,6 +12,11 @@ import {
   LiveTranscriptResults,
   useLiveTranscription,
 } from "./useLiveTranscription";
+import {
+  MoveDescription,
+  MoveQuality,
+  getChessPieceResponse,
+} from "./getChessPieceResponse";
 
 const MainLayout = styled.div`
   display: flex;
@@ -133,6 +138,32 @@ const App = () => {
   const [chessState, setChessState] = useState<Chess>(new Chess());
   //console.log("latest state", chessState);
 
+  const getMoveQuality = (): MoveQuality => {
+    return "Blunder";
+  };
+
+  const getAnswer = async () => {
+    const quality = getMoveQuality();
+    const isPlayerTrusted = false;
+    const enemyRace = "zerg";
+    const ownRace = "pirate";
+
+    const chessPieceType = "k";
+
+    // Let the AI decline your move
+    const isMoveAccepted = true; //getIsMoveAccepted();
+
+    const moveDescription: MoveDescription = {
+      quality,
+      isPlayerTrusted,
+      ownRace,
+      enemyRace,
+      chessPieceType,
+    };
+    const answer = await getChessPieceResponse(moveDescription);
+    console.log(answer);
+  };
+
   return (
     <MainLayout>
       <LeftBar>
@@ -141,6 +172,7 @@ const App = () => {
         ) : (
           <button onClick={startRecording}>Start recording</button>
         )}
+        <button onClick={getAnswer}>Test answer</button>
         <DebugView transcript={transcript} />
       </LeftBar>
       <ChessContainer>
