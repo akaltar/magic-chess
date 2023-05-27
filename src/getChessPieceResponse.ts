@@ -39,7 +39,7 @@ You are a ${move.ownRace}. ${
   }. You're against a group of ${move.enemyRace}.
 Your commander just made a ${
     move.quality
-  } move. What do you say before following his command? Make it quick.`;
+  } move. What do you say before following his command? Make it as short as possible, just a short sentence.`;
 };
 
 const getPromptAnswer = async (prompt: string): Promise<string> => {

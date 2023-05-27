@@ -17,6 +17,7 @@ import {
   MoveQuality,
   getChessPieceResponse,
 } from "./getChessPieceResponse";
+import { streamTTS } from "./useLiveTTS";
 
 const MainLayout = styled.div`
   display: flex;
@@ -99,6 +100,30 @@ const normalizeUtterance = (utterance: string) => {
   return ret;
 };
 
+const playStreamingAudio = async (streamingResponse: Response) => {
+  // TODO: Make this streaming
+  const context = new window.AudioContext({ latencyHint: "interactive" });
+
+  if (!streamingResponse.body) {
+    console.log("Response has no body", streamingResponse);
+    return;
+  }
+  const mp3Buffer = await streamingResponse.arrayBuffer();
+  if (!mp3Buffer) {
+    console.log("read value is undefined");
+    return;
+  }
+
+  const decodedAudio = await new Promise<AudioBuffer>((resolve, reject) => {
+    context.decodeAudioData(mp3Buffer, resolve, reject);
+  });
+
+  const source = context.createBufferSource();
+  source.buffer = decodedAudio;
+  source.connect(context.destination);
+  source.start();
+};
+
 const App = () => {
   const processUtteranceCallback = (utterance: string) => {
     const normalized = normalizeUtterance(utterance);
@@ -150,7 +175,7 @@ const App = () => {
 
     const chessPieceType = "k";
 
-    // Let the AI decline your move
+    // TODO: Let the AI decline your move
     const isMoveAccepted = true; //getIsMoveAccepted();
 
     const moveDescription: MoveDescription = {
@@ -160,8 +185,14 @@ const App = () => {
       enemyRace,
       chessPieceType,
     };
+
     const answer = await getChessPieceResponse(moveDescription);
+    // const answer =
+    //   "Shiver me timbers, I don't like this move me hearties! We best be quick about it or we be doom'd ta walk the plank!";
     console.log(answer);
+
+    const streamingResponse = await streamTTS(answer, "pirate");
+    await playStreamingAudio(streamingResponse);
   };
 
   return (
