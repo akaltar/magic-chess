@@ -126,6 +126,7 @@ const playStreamingAudio = async (streamingResponse: Response) => {
 
 const App = () => {
   const processUtteranceCallback = (utterance: string) => {
+    const chessState = new Chess(fen);
     const normalized = normalizeUtterance(utterance);
     const words = normalized.split(" ");
 
@@ -152,15 +153,13 @@ const App = () => {
     }
 
     console.warn("making move", plannedMove);
-    setChessState((previous) => {
-      previous.move(plannedMove.san);
-      return previous;
-    });
+    chessState.move(plannedMove.san);
+    setFEN(chessState.fen);
   };
   const { isRecording, transcript, startRecording } = useLiveTranscription(
     processUtteranceCallback
   );
-  const [chessState, setChessState] = useState<Chess>(new Chess());
+  const [fen, setFEN] = useState<string>(new Chess().fen());
   //console.log("latest state", chessState);
 
   const getMoveQuality = (): MoveQuality => {
@@ -195,6 +194,14 @@ const App = () => {
     await playStreamingAudio(streamingResponse);
   };
 
+  const makeMove = () => {
+    const chessState = new Chess(fen);
+    const legalMoves = chessState.moves({ verbose: true });
+    chessState.move(legalMoves[0].san);
+
+    setFEN(chessState.fen());
+  };
+
   return (
     <MainLayout>
       <LeftBar>
@@ -204,13 +211,11 @@ const App = () => {
           <button onClick={startRecording}>Start recording</button>
         )}
         <button onClick={getAnswer}>Test answer</button>
+        <button onClick={makeMove}>Make move</button>
         <DebugView transcript={transcript} />
       </LeftBar>
       <ChessContainer>
-        <Chessground
-          contained={true}
-          config={{ viewOnly: true, fen: chessState.fen() }}
-        />
+        <Chessground contained={true} config={{ viewOnly: true, fen }} />
       </ChessContainer>
     </MainLayout>
   );
